@@ -50,10 +50,14 @@ Route::get('/posts', 'PostsController@index');
 Route::get('/posts/{id}','PostsController@show');
 
 //API CLientes
-
+//Mostrar Clientes
 Route::get('/clients', 'ClientsController@index');
-
+//Mostrar Productos del Cliente
 Route::get('/clients/{id}','ClientsController@show');
+
+//API Tarjetas de Creditos
+//Mostrar trnsacciones de una tarjeta
+Route::get('/cards/{id}', 'CreditcardController@transacciones');
 
 
 Auth::routes();

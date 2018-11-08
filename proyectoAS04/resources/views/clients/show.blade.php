@@ -4,7 +4,7 @@
 @section('content')
 	<!-- TITULO --> 
     <div class="form-group col-sm-6 col-lg-4">
-        @section('titulo', 'Detalle de Cliente')
+        @section('titulo', 'Productos de Cliente')
     </div>
 
     <!-- Llamar a la vista de generadora de mensajes-->
@@ -19,6 +19,8 @@
 		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Cuenta</th>
 		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
 		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Límite</th>
+		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Acciones</th>
+
 		                </tr>
 		            </thead>
 		            <tbody>
@@ -36,6 +38,21 @@
 				                <td>
 				                	{{ $c->limitAmount }}
 				                </td>
+				                @if($c->type == 'TDC')
+					                <td>
+					                	<a class="col-sm-6" target="_blank" href="">
+			                            	<i class="far fa-eye"></i>
+			                                Credito
+			                            </a>
+					                </td>
+					            @else
+					            	<td>
+					                	<a class="col-sm-6" target="_blank" href="">
+			                            	<i class="far fa-eye"></i>
+			                                Debito
+			                            </a>
+					                </td>
+					            @endif
 			              	</tr>
 			          	@endforeach
 		          </tbody>
