@@ -15,18 +15,19 @@
 		        <table class="table mb-0">
 		          	<thead class="bg-light" >
 		                <tr role="row">
-		                  <th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID Transacción</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Transferencia</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Inicial</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Final</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
+		                	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"></th>
+		                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID Transacción</th>
+		                  	<th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Transferencia</th>
+		                  	<th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Inicial</th>
+		                  	<th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Final</th>
+		                  	<th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
 
 		                </tr>
 		            </thead>
 		            <tbody>
 		            	
 			            @foreach($debits as $debit)
-			                <tr role="row" class="odd">
+			                {{-- <tr role="row" class="odd">
 				                <td>
 				                	{{ $debit->id }}
 				                </td>
@@ -42,8 +43,63 @@
 				                <td>
 				                	{{ $debit->type }}
 				                </td>
+<<<<<<< HEAD
 			              	</tr>
 			              
+=======
+			              	</tr> --}}
+			              	@if($debit->type == 'INGRESO')
+				              	<tr role="row" class="odd">
+				              		<td >
+					                	<font color="green"> + </font>
+					                </td>
+					                <td>
+					                	<font color="green">{{ $debit->id }}</font>
+					                </td>
+					                <td>
+					                	<font color="green">${{ $debit->amount }}</font>
+					                </td>
+					                <td>
+					                	<font color="green">${{ $debit->initAmount }}</font>
+					                </td>
+					                <td>
+					                	<font color="green">${{ $debit->finalAmount }}</font>
+					                </td>
+					                <td>
+					                	<font color="green">{{ $debit->type }}</font>
+					                </td>
+				              	</tr>
+				             @endif
+				             @if($debit->type == 'EGRESO')
+				              	<tr role="row" class="odd">
+				              		<td >
+					                	<font color="red"> - </font>
+					                </td>
+					                <td >
+					                	<font color="red">{{ $debit->id }} </font>
+					                </td>
+					                <td>
+					                	<font color="red">${{ $debit->amount }}</font>
+					                </td>
+					                <td>
+					                	<font color="red">${{ $debit->initAmount }}</font>
+					                </td>
+					                <td>
+					                	<font color="red">${{ $debit->finalAmount }}</font>
+					                </td>
+					                <td>
+					                	<font color="red">{{ $debit->type }}</font>
+					                </td>
+				              	</tr>
+				             @endif
+
+			              	@if($debit->type == 'INGRESO')
+						   		<?php $sum += $debit->amount; ?>
+						  
+						   @else
+						   		<?php $sum1 += $debit->amount; ?>
+						   @endif
+>>>>>>> fe5d3d3ba187ae590d853791a979040ac7872a5b
 			          	@endforeach
 		          </tbody>
 		        </table>
