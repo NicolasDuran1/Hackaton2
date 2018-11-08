@@ -63,10 +63,12 @@ Route::get('/mostrar/{id}', 'ClientsController@mostrar');
 //API Tarjetas de Creditos
 //Mostrar trnsacciones de una tarjeta
 Route::get('/cards/{id}', 'CreditcardController@transacciones');
+Route::get('/grafica1/{id}', 'CreditcardController@transacciones2');
 
 //API Tarjetas de debitos
 //Mostrar trnsacciones de una tarjeta
 Route::get('/debits/{id}', 'DebitController@transacciones');
+Route::get('/grafica2/{id}', 'DebitController@transacciones2');
 
 //Realizar Transferencia
 Route::post('/transferencia', 'TransferenciaController@store');
