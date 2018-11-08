@@ -89,7 +89,15 @@ class ConsumoController extends Controller
         $id = $id."?beginDate=01-01-2018&endDate=06-11-2018";
         //dd($id);
         $debits = $this->debits->all($id); 
+        $deb = $this->debits->all($id); 
 
+        //dd($deb);
+
+        foreach($deb as $d) {
+            $de[] = $d->finalAmount;
+        }
+
+        //dd($debits);
         // foreach($debits as $d){
         //     if($d->type == 'INGRESO'){
         //         $ingreso = $ingreso + $d->amount;
@@ -103,6 +111,6 @@ class ConsumoController extends Controller
         //dd($debits);
 
        // return view('consumo/show', compact('debits', 'ingresos', 'egresos'));
-        return view('consumo/graph_trans', compact('debits'));
+        return view('consumo/graph_trans', compact('debits','de'));
     }
 }

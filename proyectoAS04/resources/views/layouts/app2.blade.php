@@ -22,7 +22,14 @@
 
   </head>
 
-
+@php
+    $user = Auth::user();
+    $idUser=$user->id;
+    $rol=DB::table('role_user')
+          ->where('user_id', $idUser)
+          ->get()
+          ->first();
+@endphp 
   <body class="h-100">   <!-- Usar todo el ancho de la pantalla -->
 
     <div class="container-fluid"> <!-- Usar todo el body -->
@@ -52,10 +59,16 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('clients') }}"><i class="fas fa-book"></i>
-                        Clientes Todos
+                <a class="nav-link" href="{{ url('/clients/' . Auth::user()->rut) }}"><i class="fas fa-book"></i>
+                        Cuentas
                 </a>
               </li>
+              @if($rol->role_id == 1)
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url('clients') }}"><i class="fas fa-book"></i>
+                          Clientes Todos
+                  </a>
+                </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-left" href="{{ url('clients') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>
                   Clientes
@@ -65,6 +78,7 @@
                   <a class="dropdown-item nav-link" href="{{ url('/empresas') }}"><i class="fas fa-users"></i> Empresas</a>
                 </div>
               </li>
+              
 
               {{-- <li class="nav-item">
                 <a class="nav-link " href="{{ url('Facultades') }}"><i class="fas fa-building"></i>
@@ -121,6 +135,12 @@
                   <a class="dropdown-item nav-link" href="{{ url('admin/activitylogs') }}"><i class="far fa-clipboard"></i> Historial de Actividad</a>
                 </div>
               </li>
+              @endif
+              {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ url('/clients/' . Auth::user()->rut) }}"><i class="fas fa-book"></i>
+                        Informes de Cuentas
+                </a>
+              </li> --}}
               <li class="nav-item">
                 <a class="nav-link " href="{{ url('/admin/users/' . Auth::user()->id. '/edituser') }}">
                   <i class="material-icons">person</i>

@@ -71,10 +71,12 @@ var ctx = document.getElementById("chart-area").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["Egresos", "Ingresos"],
+        labels: ["Egresos"],
         datasets: [{
             label: 'Pesos',
-            data: [{{ $egreso }}, {{$ingreso}}],
+            @foreach($de as $h)
+            	data: [$h,],
+            @endforeach
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
