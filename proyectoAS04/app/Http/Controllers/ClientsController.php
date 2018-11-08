@@ -32,59 +32,42 @@ class ClientsController extends Controller
         $perPage = 5;
 
         if (!empty($keyword)) {
-            foreach($clients as $c)
-                if($c->rut == $keyword)
+            foreach($clients as $c) 
+            {
+                if(($c->rut== $keyword)||($c->age== $keyword)||($c->region== $keyword)||($c->subType== $keyword)||($c->formattedRut== $keyword)||($c->firstName== $keyword)||($c->lastName== $keyword)||($c->lastName== $keyword)||($c->dv== $keyword)) 
+                {
                     $client[] = $c;
-           //         dd($clients);
-                    return view('clients/index', ['clients' => $client]);
-                
+  
+                } 
 
-        }else{
+            }        
+        }
+        else
+        {
             return view('clients/index', compact('clients'));
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');
-        return view('clients/index', compact('clients'));
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        //dd($clients);
-        //Explicación consultas con API: (ejemplo en lineas 36-39)
-        //1) deben leer los datos de la API y almacenarlos en una variable (linea 28)
-        //2) recorrer la variable con un foreach
-        //3) los JOIN son equivalentes a los if. En el ejemplo se ve la sintaxis. Es importante que el resultado se almacene en un array, de lo contrario solo almacenará el primer resultado
-
-    //    foreach($clients as $c){
-    //        if($c->type == 'J')
-    //            $caca[] = $c;
-    //    }
-        
-        
-
-    //    dd($caca);    //mostrar el array en pantalla
-
-        
+        return view('clients/index', ['clients' => $client]);
     }
     
 
     public function show($id)
     {
         //dd('hola');
+
+        $usuarios= $this->clients->all();
+        foreach($usuarios as $u) {
+                if($u->rut == $id) { 
+                    $dueno = $u;
+                    //dd($dueno);
+                }
+        }
         $client = $this->clients->find($id);
 
         //dd($client);
 
-        return view('clients/show', compact('client'));
+        return view('clients/show', compact('client','dueno'));
     }
 
     /**
