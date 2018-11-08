@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Repositories\Clients; //Clase que obtiene los datos de la API
 
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Auth;
+
 class ClientsController extends Controller
 {
     /**
@@ -91,10 +95,10 @@ class ClientsController extends Controller
 
         $usuarios= $this->clients->all();
         foreach($usuarios as $u) {
-                if($u->rut == $id) { 
-                    $dueno = $u;
-                    //dd($dueno);
-                }
+            if($u->rut == $id) { 
+                $dueno = $u;
+                //dd($dueno);
+            }
         }
         $client = $this->clients->find($id);
 
@@ -103,12 +107,19 @@ class ClientsController extends Controller
         return view('clients/show', compact('client','dueno'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function mostrar($id) 
+    {
+        $usuarios= $this->clients->all();
+        foreach($usuarios as $u) {
+            if($u->rut == $id) { 
+                $clienteactual = $u;
+                //dd($dueno);
+            }
+        }
+        //dd($clienteactual);
+        return view('clients/mostrar', compact('clienteactual'));
+           
+    }
     public function edit($id)
     {
         //

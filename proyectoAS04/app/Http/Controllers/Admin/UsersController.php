@@ -53,9 +53,7 @@ class UsersController extends Controller
                 'rut' => 'required',
                 'email' => 'required|string|max:255|email|unique:users',
                 'password' => 'required',
-                'roles' => 'required',
-                'universidad' => 'required',
-                'carrera' => 'required'
+                'roles' => 'required'
             ]
         );
 
