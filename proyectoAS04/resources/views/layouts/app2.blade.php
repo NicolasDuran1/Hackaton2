@@ -42,11 +42,6 @@
           @else
           <div class="nav-wrapper">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('posts') }}"><i class="fas fa-book"></i>
-                        Posts
-                </a>
-              </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('clients') }}"><i class="fas fa-book"></i>
