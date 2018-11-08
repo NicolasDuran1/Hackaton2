@@ -68,7 +68,7 @@
 <script>
 var ctx = document.getElementById("chart-area").getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: ["Ingresos", "Egresos"],
         datasets: [{
