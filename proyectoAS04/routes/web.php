@@ -66,6 +66,9 @@ Route::get('/cards/{id}', 'CreditcardController@transacciones');
 //Mostrar trnsacciones de una tarjeta
 Route::get('/debits/{id}', 'DebitController@transacciones');
 
+//Realizar Transferencia
+Route::post('/transferencia', 'TransferenciaController@store');
+
 
 
 Auth::routes();
