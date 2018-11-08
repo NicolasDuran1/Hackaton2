@@ -43,30 +43,26 @@
 				                <td>
 				                	{{ $debit->type }}
 				                </td>
-<<<<<<< HEAD
-			              	</tr>
-			              
-=======
 			              	</tr> --}}
 			              	@if($debit->type == 'INGRESO')
 				              	<tr role="row" class="odd">
 				              		<td >
-					                	<font color="green"> + </font>
+					                	<font color="blue"> + </font>
 					                </td>
 					                <td>
-					                	<font color="green">{{ $debit->id }}</font>
+					                	<font color="blue">{{ $debit->id }}</font>
 					                </td>
 					                <td>
-					                	<font color="green">${{ $debit->amount }}</font>
+					                	<font color="blue">${{ $debit->amount }}</font>
 					                </td>
 					                <td>
-					                	<font color="green">${{ $debit->initAmount }}</font>
+					                	<font color="blue">${{ $debit->initAmount }}</font>
 					                </td>
 					                <td>
-					                	<font color="green">${{ $debit->finalAmount }}</font>
+					                	<font color="blue">${{ $debit->finalAmount }}</font>
 					                </td>
 					                <td>
-					                	<font color="green">{{ $debit->type }}</font>
+					                	<font color="blue">{{ $debit->type }}</font>
 					                </td>
 				              	</tr>
 				             @endif
@@ -93,13 +89,7 @@
 				              	</tr>
 				             @endif
 
-			              	@if($debit->type == 'INGRESO')
-						   		<?php $sum += $debit->amount; ?>
-						  
-						   @else
-						   		<?php $sum1 += $debit->amount; ?>
-						   @endif
->>>>>>> fe5d3d3ba187ae590d853791a979040ac7872a5b
+			              	
 			          	@endforeach
 		          </tbody>
 		        </table>
@@ -113,6 +103,8 @@
 					    <th>
 					    	<a class="btn btn-primary" class="col-sm-6" href="/home"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
 					    </th>
+
+					  
 					  </tr>
 					</table>
 					<!-- FINTABLA -->
@@ -120,6 +112,7 @@
 		  	</div>
 		</form>
 	</div>
+
 
 
 @endsection
