@@ -102,8 +102,9 @@
                     {{-- <div class="center">
                       <a class="btn btn" class="col-sm-6" href="/clients/{{$clienteactual->rut}}"><i class="fas fa-upload"></i>   Ver Información</a>
                     </div> --}}
-                    {{-- <a class="btn" href="/clients/{{$clienteactual->rut}}">Link</a> --}}
-                    <button type="button" href="/clients/{{$clienteactual->rut}}">Ver Información</button>
+                    <a class="btn btn-success" href="/clients/{{$clienteactual->rut}}">Ver Información</a>
+                    {{-- <button type="button" href="{{ url('/clients/' . $clienteactual->rut) }}" >Ver Información</button>
+                    <a href="/clients/{{$clienteactual->rut}}">Aqui</a> --}}
                   </div>
                 </div>
               </div>
