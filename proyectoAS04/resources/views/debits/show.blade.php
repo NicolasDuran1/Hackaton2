@@ -24,6 +24,7 @@
 		                </tr>
 		            </thead>
 		            <tbody>
+		            	<?php $sum = 0; $sum1 = 0; ?>
 			            @foreach($debits as $debit)
 			                <tr role="row" class="odd">
 				                <td>
@@ -42,6 +43,12 @@
 				                	{{ $debit->type }}
 				                </td>
 			              	</tr>
+			              	@if($debit->type == 'INGRESO')
+						   		<?php $sum += $debit->amount; ?>
+						  
+						   @else
+						   		<?php $sum1 += $debit->amount; ?>
+						   @endif
 			          	@endforeach
 		          </tbody>
 		        </table>
@@ -55,6 +62,15 @@
 					    <th>
 					    	<a class="btn btn-primary" class="col-sm-6" href="/clients"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
 					    </th>
+
+					    <div class="alert alert-success">
+						        Total INGRESOS: $ {{ $sum }}
+						</div>
+						<div class="alert alert-danger">
+						        Total EGRESOS: $ {{ $sum1 }}
+						 </div>
+					    
+					    
 					  </tr>
 					</table>
 					<!-- FINTABLA -->
@@ -65,7 +81,3 @@
 
 
 @endsection
-
-		
-
-		       
