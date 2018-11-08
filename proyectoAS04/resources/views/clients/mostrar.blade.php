@@ -22,7 +22,7 @@
                   <div class="card card-small mb-4 pt-3">
                     <div class="card-header border-bottom text-center">
                       <div class="mb-3 mx-auto">
-                        <img class="rounded-circle" src="{{ asset('images/avatars/2.jpg') }}" alt="User Avatar" width="110"> </div>
+                        <img class="rounded-circle" src="{{ asset('images/hola8.png') }}" alt="User Avatar" width="110"> </div>
                       <h4 class="mb-0">{{Auth::user()->nombre}}</h4>
                       <span class="text-muted d-block mb-2">Usuario</span>
                       
