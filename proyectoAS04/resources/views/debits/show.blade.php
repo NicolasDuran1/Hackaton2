@@ -1,5 +1,5 @@
 @extends('layouts.app2')
-@section('title', 'Transacciones Tarjeta de Crédito')
+@section('title', 'Transacciones Tarjeta de Débito')
 
 @section('content')
 	<!-- TITULO --> 
@@ -15,35 +15,31 @@
 		        <table class="table mb-0">
 		          	<thead class="bg-light" >
 		                <tr role="row">
-		                  <th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID Tarjeta</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Cuota</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Total</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto de Cuota</th>
+		                  <th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID Transacción</th>
+		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Transferencia</th>
+		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Inicial</th>
+		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Final</th>
 		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Estado</th>
 
 		                </tr>
 		            </thead>
 		            <tbody>
-			            @foreach($cards as $card)
+			            @foreach($debits as $debit)
 			                <tr role="row" class="odd">
 				                <td>
-				                	{{ $card->product }}
+				                	{{ $debit->id }}
 				                </td>
 				                <td>
-				                	{{ $card->quota }}
+				                	${{ $debit->amount }}
 				                </td>
 				                <td>
-				                	${{ $card->amount }}
+				                	${{ $debit->initAmount }}
 				                </td>
 				                <td>
-				                	${{ $card->quotaAmount }}
+				                	${{ $debit->finalAmount }}
 				                </td>
 				                <td>
-				                	{{ $card->type }}
-				                </td>
-				                <td>
-				                	{{ $card->payStatus }}
+				                	{{ $debit->type }}
 				                </td>
 			              	</tr>
 			          	@endforeach

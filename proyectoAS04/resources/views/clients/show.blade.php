@@ -30,7 +30,7 @@
 				                	{{ $c->id }}
 				                </td>
 				                <td>
-				                	{{ $c->amount }}
+				                	${{ $c->amount }}
 				                </td>
 				                <td>
 				                	{{ $c->type }}
@@ -41,7 +41,7 @@
 				                	</td>
 				                @else
 					                <td>
-					                	{{ $c->limitAmount }}
+					                	${{ $c->limitAmount }}
 					                </td>
 					            @endif
 				                @if($c->type == 'TDC')
@@ -53,7 +53,7 @@
 					                </td>
 					            @else
 					            	<td>
-					                	<a class="col-sm-6" target="_blank" href="">
+					                	<a class="col-sm-6" target="_blank" href="/debits/{{ $c->id }}">
 			                            	<i class="far fa-eye"></i>
 			                                Debito
 			                            </a>
