@@ -46,7 +46,11 @@
           @else
           <div class="nav-wrapper">
             <ul class="nav flex-column">
-
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/mostrar/' . Auth::user()->rut) }}"><i class="fas fa-book"></i>
+                        Datos Personales
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('clients') }}"><i class="fas fa-book"></i>
                         Clientes Todos
