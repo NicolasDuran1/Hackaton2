@@ -8,7 +8,7 @@
 
 		<div class="alert alert-warning alert-dismissable">
 		  
-		  <strong>Nombre: </strong> 
+		  <strong>Nombre: {{Auth::user()->nombre}} </strong> 
 		</div>
   		
 
@@ -16,10 +16,15 @@
 	</div>
 
 
+
   	<div class="col-md-6">
-  		<div class="alert alert-success">Ingresos:</div> <br>
+  		<div class="alert alert-success">Ingresos:  </div> <br>
   		<div class="alert alert-danger">Egresos:</div>
   	</div>
 </div>
+
+
+
+
 
 @endsection
