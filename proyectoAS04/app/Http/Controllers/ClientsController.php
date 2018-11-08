@@ -34,11 +34,12 @@ class ClientsController extends Controller
         if (!empty($keyword)) {
             foreach($clients as $c) 
             {
-                if(($c->rut== $keyword)||($c->age== $keyword)||($c->region== $keyword)||($c->subType== $keyword)||($c->formattedRut== $keyword)||($c->firstName== $keyword)||($c->lastName== $keyword)||($c->lastName== $keyword)) 
+                if(($c->rut== $keyword)||($c->age== $keyword)||($c->region== $keyword)||($c->subType== $keyword)||($c->formattedRut== $keyword)||($c->firstName== $keyword)||($c->lastName== $keyword)||($c->lastName== $keyword)||($c->dv== $keyword)) 
                 {
                     $client[] = $c;
-                    return view('clients/index', ['clients' => $client]); 
-                }
+  
+                } 
+
             }        
         }
         else
@@ -47,7 +48,7 @@ class ClientsController extends Controller
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');
-        return view('clients/index', compact('clients'));
+        return view('clients/index', ['clients' => $client]);
     }
     
 
