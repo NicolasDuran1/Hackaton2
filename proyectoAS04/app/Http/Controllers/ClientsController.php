@@ -44,8 +44,7 @@ class ClientsController extends Controller
         }
         else
         {
-            $tipo_cliente = 0;
-            return view('clients/index', compact('clients','tipo_cliente'));
+            return view('clients/index', compact('clients'));
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');

@@ -35,7 +35,10 @@
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Edad</th>
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Género</th>
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Región </th>
-				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Sub Type</th>
+				                  	@if($tipo_cliente == 1)
+				                  	@else
+				                  		<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
+				                  	@endif
 				                  	@if($tipo_cliente == 1 || $tipo_cliente == 2)
 				                    @else
 				                  		<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
@@ -62,9 +65,6 @@
 			                        	{{ $client->region }}
 			                        </td>
 			                        @if($client->subType == Null)
-			                        	<td>
-			                        		----
-			                        	</td>
 			                        @else
 				                        <td>
 				                        	{{ $client->subType }}
