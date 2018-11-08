@@ -28,6 +28,19 @@ class ClientsController extends Controller
         $clients = $this->clients->all(); //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
 
         //dd($clients);
+        //Explicación consultas con API: (ejemplo en lineas 36-39)
+        //1) deben leer los datos de la API y almacenarlos en una variable (linea 28)
+        //2) recorrer la variable con un foreach
+        //3) los JOIN son equivalentes a los if. En el ejemplo se ve la sintaxis. Es importante que el resultado se almacene en un array, de lo contrario solo almacenará el primer resultado
+
+    //    foreach($clients as $c){
+    //        if($c->type == 'J')
+    //            $caca[] = $c;
+    //    }
+        
+        
+
+    //    dd($caca);    //mostrar el array en pantalla
 
         return view('clients/index', compact('clients'));
     }
