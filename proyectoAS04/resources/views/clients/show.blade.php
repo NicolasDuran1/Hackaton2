@@ -24,7 +24,8 @@
 			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Cuenta</th>
 			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
 			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Límite</th>
-			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Acciones</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Historial</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Informe</th>
 
 		                </tr>
 		            </thead>
@@ -89,6 +90,21 @@
 					                	<a class="col-sm-6"  href="/debits/{{ $c->id }}">
 			                            	<i class="fas fa-search-dollar"></i>
 			                                Transacciones
+			                            </a>
+					                </td>
+					            @endif
+					            @if($c->type == 'TDC')
+					                <td>
+					                	<a class="col-sm-6"  href="/graph_trans/{{ $c->id }}">
+			                            	<i class="fas fa-search-dollar"></i>
+			                                Gráfica
+			                            </a>
+					                </td>
+					            @else
+					            	<td>
+					                	<a class="col-sm-6"  href="/graph_trans/{{ $c->id }}">
+			                            	<i class="fas fa-search-dollar"></i>
+			                                Gráfica
 			                            </a>
 					                </td>
 					            @endif

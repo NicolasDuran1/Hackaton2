@@ -70,8 +70,10 @@ Route::get('/debits/{id}', 'DebitController@transacciones');
 
 //Realizar Transferencia
 Route::post('/transferencia', 'TransferenciaController@store');
+//Consumo
+Route::get('/consumo', 'ConsumoController@index');
 
-
+Route::get('/graph_trans/{id}', 'ConsumoController@graph_trans');
 
 Auth::routes();
 
