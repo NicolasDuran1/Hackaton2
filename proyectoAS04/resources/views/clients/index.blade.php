@@ -8,6 +8,20 @@
 	</div>
 	<!-- Llamar a la vista de generadora de mensajes-->
 	@include('common.sessions')
+
+	 <div class="form-group">
+        {!! Form::open(['method' => 'GET', 'url' => '/clients', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
+          <div class="input-group">
+              <input type="text" class="form-control" name="search" placeholder="Buscar...">
+              <span class="input-group-append">
+                  <button class="btn btn-secondary" type="submit">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </span>
+          </div>
+          {!! Form::close() !!}
+        </div>
+
 	<!-- Crear Facultad -->
     <div class="card card-small py-3 mb-4 d-flex align-items-center">
     	<div class="card-body container-fluid">

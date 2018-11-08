@@ -23,9 +23,40 @@ class ClientsController extends Controller
         $this->clients = $clients;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $clients = $this->clients->all(); //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+
+        $keyword = $request->get('search');
+        $perPage = 5;
+
+        if (!empty($keyword)) {
+            foreach($clients as $c)
+                if($c->rut == $keyword)
+                    $client[] = $c;
+           //         dd($clients);
+                    return view('clients/index', ['clients' => $client]);
+                
+
+        }else{
+            return view('clients/index', compact('clients'));
+        }
+        //return view('system-mgmt/sala/index', ['salas' => $salas]);
+        //-> sortByDesc('id');
+        return view('clients/index', compact('clients'));
+        
+
+
+
+
+
+
+
+
+
+
+
 
         //dd($clients);
         //Explicación consultas con API: (ejemplo en lineas 36-39)
@@ -42,7 +73,7 @@ class ClientsController extends Controller
 
     //    dd($caca);    //mostrar el array en pantalla
 
-        return view('clients/index', compact('clients'));
+        
     }
     
 
