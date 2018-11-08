@@ -129,6 +129,8 @@
               </li>
             </ul>
           </div>
+
+          
           @endguest
         </aside>
         <!-- End Main Sidebar -->
