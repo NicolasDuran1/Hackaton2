@@ -37,6 +37,7 @@ class ClientsController extends Controller
                 if(($c->rut== $keyword)||($c->age== $keyword)||($c->region== $keyword)||($c->subType== $keyword)||($c->formattedRut== $keyword)||($c->firstName== $keyword)||($c->lastName== $keyword)||($c->lastName== $keyword))
                     $client[] = $c;
             }
+            return view('clients/index', ['clients' => $client]);
            //         dd($clients);
                            
         }else{
@@ -44,7 +45,7 @@ class ClientsController extends Controller
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');
-        return view('clients/index', ['clients' => $client]);
+        
         
 
 
