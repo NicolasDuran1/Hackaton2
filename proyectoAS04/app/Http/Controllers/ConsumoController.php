@@ -36,10 +36,14 @@ class ConsumoController extends Controller
         foreach($debits as $d){
             if($d->type == 'INGRESO'){
                 $ingreso = $ingreso + $d->amount;
+          
             }else{
                 $egreso = $egreso + $d->amount;
+    
             }
         }
+
+        
 
         print_r($ingreso.'      ');
         print_r($egreso);

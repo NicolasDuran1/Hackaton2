@@ -65,15 +65,16 @@
 
 
 <canvas id="chart-area" width="425" height="212" class="chartjs-render-monitor" style="display: block; height: 170px; width: 340px;"></canvas>
+
 <script>
 var ctx = document.getElementById("chart-area").getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ["Ingresos", "Egresos"],
+        labels: ["Egresos", "Ingresos"],
         datasets: [{
             label: 'Pesos',
-            data: [{{ $ingreso }}, {{$egreso}}],
+            data: [{{ $egreso }}, {{$ingreso}}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -104,7 +105,6 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-
 
 
 @endsection
