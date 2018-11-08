@@ -57,7 +57,7 @@ Route::get('/clients/{id}','ClientsController@show');
 Route::get('/personas', 'ClientsController@personas');
 //Vista Empresas
 Route::get('/empresas', 'ClientsController@empresas');
-
+Route::get('/consumo', 'ConsumoController@index');
 //API Tarjetas de Creditos
 //Mostrar trnsacciones de una tarjeta
 Route::get('/cards/{id}', 'CreditcardController@transacciones');
