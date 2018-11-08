@@ -44,11 +44,45 @@ class ClientsController extends Controller
         }
         else
         {
-            return view('clients/index', compact('clients'));
+            $tipo_cliente = 0;
+            return view('clients/index', compact('clients','tipo_cliente'));
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');
+        //$tipo_cliente = 0;
         return view('clients/index', ['clients' => $client]);
+    }
+
+    public function personas(Request $request)
+    {
+        $personas = $this->clients->all(); //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+        
+        foreach($personas as $p) 
+        { 
+            if($p->type == 'N') 
+            { 
+                $clients[] = $p;
+            }
+        }
+        $tipo_cliente = 1;
+        return view('clients/indexseparado', compact('clients','tipo_cliente'));
+    }
+
+    public function empresas(Request $request)
+    {
+        $empresas = $this->clients->all(); //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+        
+        foreach($empresas as $e) 
+        { 
+            if($e->type == 'J') 
+            { 
+                $clients[] = $e;
+            }
+        }
+        $tipo_cliente = 2;
+        return view('clients/indexseparado', compact('clients','tipo_cliente'));
     }
     
 

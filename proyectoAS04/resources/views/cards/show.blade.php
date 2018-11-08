@@ -25,6 +25,7 @@
 		                </tr>
 		            </thead>
 		            <tbody>
+		            	<?php $sum = 0; $sum1 = 0; ?>
 			            @foreach($cards as $card)
 			                <tr role="row" class="odd">
 				                <td>
@@ -46,6 +47,13 @@
 				                	{{ $card->payStatus }}
 				                </td>
 			              	</tr>
+
+			              	@if($card->payStatus == 'PENDIENTE')
+						   		<?php $sum += $card->quotaAmount; ?>
+						  
+						   @else
+						   		<?php $sum1 += $card->quotaAmount; ?>
+						   @endif
 			          	@endforeach
 		          </tbody>
 		        </table>
@@ -59,6 +67,13 @@
 					    <th>
 					    	<a class="btn btn-primary" class="col-sm-6" href="/clients"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
 					    </th>
+						    <div class="alert alert-success">
+						        Total pagado: $ {{ $sum1 }}
+						    </div>
+						    <div class="alert alert-danger">
+						        Total a Pagar: $ {{ $sum }}
+						    </div>
+	
 					  </tr>
 					</table>
 					<!-- FINTABLA -->
@@ -69,7 +84,3 @@
 
 
 @endsection
-
-		
-
-		       

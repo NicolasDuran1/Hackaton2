@@ -36,8 +36,10 @@
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Género</th>
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Región </th>
 				                  	<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Sub Type</th>
-				                  	
-			                  		<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
+				                  	@if($tipo_cliente == 1 || $tipo_cliente == 2)
+				                    @else
+				                  		<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
+				                  	@endif
 				                  	<th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Acciones</th>
 			                	</tr>
 			             	</thead>
@@ -68,10 +70,12 @@
 				                        	{{ $client->subType }}
 				                        </td>
 				                    @endif
-				                    
-			                        <td>
-			                        	{{ $client->type }}
-			                        </td>
+				                    @if($tipo_cliente == 1 || $tipo_cliente == 2)
+				                    @else
+				                        <td>
+				                        	{{ $client->type }}
+				                        </td>
+				                    @endif
 			                        <td>
 			                          	<a class="col-sm-6" target="_blank" href="/clients/{{$client->rut}}">
 			                              <i class="far fa-eye">
