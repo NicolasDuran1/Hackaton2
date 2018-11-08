@@ -50,14 +50,14 @@
 					            @endif
 				                @if($c->type == 'TDC')
 					                <td>
-					                	<a class="col-sm-6" target="_blank" href="/cards/{{ $c->id }}">
+					                	<a class="col-sm-6"  href="/cards/{{ $c->id }}">
 			                            	<i class="far fa-eye"></i>
 			                                Credito
 			                            </a>
 					                </td>
 					            @else
 					            	<td>
-					                	<a class="col-sm-6" target="_blank" href="/debits/{{ $c->id }}">
+					                	<a class="col-sm-6"  href="/debits/{{ $c->id }}">
 			                            	<i class="far fa-eye"></i>
 			                                Debito
 			                            </a>
