@@ -24,6 +24,26 @@ class DebitController extends Controller
         $debits = $this->debits->all($id); 
         //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
 
+         $ingreso= '0';
+        $egreso = '0';
+
+        foreach($debits as $d){
+            if($d->type == 'INGRESO'){
+                $ingreso = $ingreso + $d->amount;
+            }else{
+                $egreso = $egreso + $d->amount;
+            }
+        }
+
+        //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+        //dd($cards);
+        //dd($id);
+
+        //dd($cards);
+
+        return view('debits/show', ['debits' => $debits, 'ingreso' => $ingreso, 'egreso' => $egreso]);
+
         //dd($cards);
         //dd($id);
 
