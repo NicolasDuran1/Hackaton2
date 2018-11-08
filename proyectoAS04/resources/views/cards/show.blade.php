@@ -25,7 +25,7 @@
 		                </tr>
 		            </thead>
 		            <tbody>
-		            	<?php $sum = 0; $sum1 = 0; ?>
+		            	
 			            @foreach($cards as $card)
 			                <tr role="row" class="odd">
 				                <td>
@@ -48,12 +48,7 @@
 				                </td>
 			              	</tr>
 
-			              	@if($card->payStatus == 'PENDIENTE')
-						   		<?php $sum += $card->quotaAmount; ?>
-						  
-						   @else
-						   		<?php $sum1 += $card->quotaAmount; ?>
-						   @endif
+			              	
 			          	@endforeach
 		          </tbody>
 		        </table>
@@ -65,16 +60,8 @@
 					  <tr>
 					  	<!-- Volver Atras -->
 					    <th>
-					    	<a class="btn btn-primary" class="col-sm-6" href="/clients"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
-					    </th>
-						    <div class="alert alert-success">
-						        Total pagado: $ {{ $sum1 }}
-						    </div>
-						    <div class="alert alert-danger">
-						        Total a Pagar: $ {{ $sum }}
-						    </div>
-	
-					  </tr>
+					    	<a class="btn btn-primary" class="col-sm-6" href="/home"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
+					    
 					</table>
 					<!-- FINTABLA -->
 			    </div>
@@ -82,45 +69,5 @@
 		</form>
 	</div>
 
-<canvas id="chart-area" width="425" height="212" class="chartjs-render-monitor" style="display: block; height: 170px; width: 340px;"></canvas>
-<script>
-var ctx = document.getElementById("chart-area").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ["Pendiente","Pagado"],
-        datasets: [{
-            label: 'Pesos',
-            data: [{{$sum1}},{{ $sum}} ],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
 
 @endsection

@@ -32,6 +32,22 @@ class CreditcardController extends Controller
         return view('cards/show', compact('cards'));
     }
 
+    public function transacciones2($id)
+    {
+        
+        $id = $id."?beginDate=01-01-2018&endDate=06-11-2018";
+        //dd($id);
+        $cards = $this->cards->all($id); 
+        //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+        //dd($cards);
+        //dd($id);
+
+        //dd($cards);
+
+        return view('cards/grafica', compact('cards'));
+    }
+
 
     // public function transacciones($id)
     // {
