@@ -85,10 +85,10 @@ var ctx = document.getElementById("chart-area").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["Ingresos", "Egresos"],
+        labels: ["Egresos","Ingresos"],
         datasets: [{
             label: 'Pesos',
-            data: [{{ $ingreso}}, {{$egreso}}],
+            data: [{{$egreso}},{{ $ingreso}} ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
