@@ -32,19 +32,19 @@ class ClientsController extends Controller
         $perPage = 5;
 
         if (!empty($keyword)) {
-            foreach($clients as $c)
-                if($c->rut == $keyword)
+            
+            foreach($clients as $c){
+                if(($c->rut== $keyword)||($c->age== $keyword)||($c->region== $keyword)||($c->subType== $keyword)||($c->formattedRut== $keyword)||($c->firstName== $keyword)||($c->lastName== $keyword)||($c->lastName== $keyword))
                     $client[] = $c;
+            }
            //         dd($clients);
-                    return view('clients/index', ['clients' => $client]);
-                
-
+                           
         }else{
             return view('clients/index', compact('clients'));
         }
         //return view('system-mgmt/sala/index', ['salas' => $salas]);
         //-> sortByDesc('id');
-        return view('clients/index', compact('clients'));
+        return view('clients/index', ['clients' => $client]);
         
 
 
