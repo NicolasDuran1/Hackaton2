@@ -72,7 +72,7 @@
 					                	<font color="red"> - </font>
 					                </td>
 					                <td >
-					                	<font color="red">{{ $debit->id }}</font>
+					                	<font color="red">{{ $debit->id }} </font>
 					                </td>
 					                <td>
 					                	<font color="red">${{ $debit->amount }}</font>
