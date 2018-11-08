@@ -9,7 +9,11 @@
 
     <!-- Llamar a la vista de generadora de mensajes-->
     @include('common.sessions')
+    <div class="card-body p-0 pb-3 text-left">
+    	<h5 class="align-items-left">Cliente: {{$dueno->fullName}}</h5>
+   	</div>
     <div class="card card-small py-3 mb-4 d-flex align-items-center">
+
 		<form class="form-horizontal text-center" role="form">
 		    <div class="card-body p-0 pb-3 text-center">
 		        <table class="table mb-0">
