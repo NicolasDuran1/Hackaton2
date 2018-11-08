@@ -83,15 +83,31 @@
 			                            	<i class="fas fa-search-dollar"></i>
 			                                Transacciones
 			                            </a>
+
+			                            <a class="col-sm-6"  href="/grafica1/{{ $c->id }}">
+	                              			<i class="far fa-eye">
+	                              			</i>
+	                                		Grafica
+                              			</a>
+
 					                </td>
 					            @else
 					            	<td>
+
 					                	<a class="col-sm-6"  href="/debits/{{ $c->id }}">
 			                            	<i class="fas fa-search-dollar"></i>
 			                                Transacciones
 			                            </a>
+
+			                            <a class="col-sm-6"  href="/grafica2/{{ $c->id }}">
+	                              			<i class="far fa-eye">
+	                              			</i>
+	                                		Grafica
+                              			</a>
+
 					                </td>
 					            @endif
+					            
 			              	</tr>
 			          	@endforeach
 		          </tbody>
