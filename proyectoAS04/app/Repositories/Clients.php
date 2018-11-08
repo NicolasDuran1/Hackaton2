@@ -32,13 +32,16 @@ Class Clients
 	}
 
 	//Busca una ID especifica de un post y la envia al Controlador
+
 	public function find($id)
 	{
 		$client = new Client([
             'base_uri' => 'apifintech-team2.3it.cl/hackathon',
         ]);
 
-        $response = $client->request('GET', "hackathon/clients/{$id}"); 
+        $response = $client->request('GET', "hackathon/clients/{$id}/products"); 
+
+        //dd($response);
 
         return json_decode($response->getBody()->getContents()); 
 	}

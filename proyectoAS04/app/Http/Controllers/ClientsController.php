@@ -35,7 +35,10 @@ class ClientsController extends Controller
 
     public function show($id)
     {
+        //dd('hola');
         $client = $this->clients->find($id);
+
+        //dd($client);
 
         return view('clients/show', compact('client'));
     }
