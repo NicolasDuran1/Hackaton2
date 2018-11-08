@@ -19,26 +19,55 @@
 		        <table class="table mb-0">
 		          	<thead class="bg-light" >
 		                <tr role="row">
-		                  <th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Cuenta</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Límite</th>
-		                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Acciones</th>
+                			<th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"></th>
+			                 <th tabindex="0" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Cuenta</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tipo</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Monto Límite</th>
+			                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Acciones</th>
 
 		                </tr>
 		            </thead>
 		            <tbody>
 			            @foreach($client as $c)
 			                <tr role="row" class="odd">
+			                	@if($c->type == 'TDC')
+				                	<td>
+				                		<i class="fab fa-cc-visa"></i>
+				                	</td>
+				                @endif
+				                @if($c->type == 'CVISTA')
+				                	<td>
+				                		<i class="fas fa-credit-card"></i>
+				                	</td>
+				                @endif
+				                @if($c->type == 'CTD')
+				                	<td>
+				                		<i class="far fa-credit-card"></i>
+				                	</td>
+				                @endif
+
 				                <td>
 				                	{{ $c->id }}
 				                </td>
 				                <td>
 				                	${{ $c->amount }}
 				                </td>
-				                <td>
-				                	{{ $c->type }}
-				                </td>
+				                @if($c->type == 'TDC')
+				                	<td>
+				                		Tarjeta de Crédito
+				                	</td>
+				                @endif
+				                @if($c->type == 'CVISTA')
+				                	<td>
+				                		Cuenta Vista
+				                	</td>
+				                @endif
+				                @if($c->type == 'CTD')
+				                	<td>
+				                		Cuenta Corriente
+				                	</td>
+				                @endif
 				                @if($c->limitAmount == Null)
 				                	<td>
 				                		-----
@@ -51,15 +80,15 @@
 				                @if($c->type == 'TDC')
 					                <td>
 					                	<a class="col-sm-6"  href="/cards/{{ $c->id }}">
-			                            	<i class="far fa-eye"></i>
-			                                Credito
+			                            	<i class="fas fa-search-dollar"></i>
+			                                Transacciones
 			                            </a>
 					                </td>
 					            @else
 					            	<td>
 					                	<a class="col-sm-6"  href="/debits/{{ $c->id }}">
-			                            	<i class="far fa-eye"></i>
-			                                Debito
+			                            	<i class="fas fa-search-dollar"></i>
+			                                Transacciones
 			                            </a>
 					                </td>
 					            @endif
@@ -68,6 +97,7 @@
 		          </tbody>
 		        </table>
 		    </div>
+		    <br>
 		    <div class="form-group ">
 			    <div class="form-group col-sm-10">
 			    	<!-- TABLA -->
