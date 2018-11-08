@@ -73,7 +73,7 @@
 			                        	{{ $client->type }}
 			                        </td>
 			                        <td>
-			                          	<a class="col-sm-6" target="_blank" href="/clients/{{$client->rut}}">
+			                          	<a class="col-sm-6"  href="/clients/{{$client->rut}}">
 			                              <i class="far fa-eye">
 			                              </i>
 			                                Ver más
