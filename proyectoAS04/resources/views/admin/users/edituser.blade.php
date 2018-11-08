@@ -12,7 +12,7 @@
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Vista General</span>
-                <h3 class="page-title">Peril de Usuario</h3>
+                <h3 class="page-title">Perfil de Usuario</h3>
               </div>
             </div>
             <!-- End Page Header -->
