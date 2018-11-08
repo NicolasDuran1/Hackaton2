@@ -9,7 +9,7 @@
     {!! $errors->first('rut', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div class="form-group">
+{{-- <div class="form-group">
     <strong class="text-muted d-block mb-2">Universidad:</strong>
     <!-- <label for="">Universidad:</label> -->
     <select name="universidad" id="universidad" class="form-control">
@@ -17,9 +17,9 @@
         <option value="{{ $universidad->id }}">{{ $universidad->nombre_universidad }}</option>
       @endforeach
     </select>
-</div>
+</div> --}}
 
-<div class="form-group">
+{{-- <div class="form-group">
     <strong class="text-muted d-block mb-2">Carrera:</strong>
     <!-- <label for="">Universidad:</label> -->
     <select name="carrera" id="carrera" class="form-control">
@@ -27,7 +27,7 @@
         <option value="{{ $carrera->id }}">{{ $carrera->nombre_carrera }}</option>
       @endforeach
     </select>
-</div>
+</div> --}}
 
 <div class="form-group{{ $errors->has('email') ? ' has-error' : ''}}">
     {!! Form::label('email', 'Email: ', ['class' => 'control-label']) !!}
