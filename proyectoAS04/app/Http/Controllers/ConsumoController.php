@@ -44,6 +44,7 @@ class ConsumoController extends Controller
         print_r($ingreso.'      ');
         print_r($egreso);
 
-        return view('consumo/show', compact('debits'));
+       // return view('consumo/show', compact('debits', 'ingresos', 'egresos'));
+        return view('consumo/show', ['debits' => $debits, 'ingreso' => $ingreso, 'egreso' => $egreso]);
     }
 }

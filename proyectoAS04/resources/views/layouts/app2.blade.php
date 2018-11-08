@@ -15,6 +15,10 @@
       <link rel="stylesheet" href="{{ asset('styles/extras.1.1.0.min.css') }}">
       <script async defer src="https://buttons.github.io/buttons.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript" src="{{ URL::asset('js/Chart.bundle.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('js/Chart.bundle.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('js/Chart.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('js/Chart.min.js') }}"></script>
 
   </head>
 
@@ -213,6 +217,7 @@
     <script src="{{ asset('scripts/shards-dashboards.1.1.0.min.js') }}"></script>
     <script src="{{ asset('scripts/app/app-blog-overview.1.1.0.js') }}"></script>
     <script src="js/highcharts.js"></script>
+    
     @yield('scripts')
   </body>
 </html>
