@@ -54,7 +54,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item nav-link" href="{{ url('/personas') }}"><i class="far fa-user"></i>    Personas</a>
-                  <a class="dropdown-item nav-link" href="{{ url('admin/roles') }}"><i class="fas fa-users"></i> Empresas</a>
+                  <a class="dropdown-item nav-link" href="{{ url('/empresas') }}"><i class="fas fa-users"></i> Empresas</a>
                 </div>
               </li>
 

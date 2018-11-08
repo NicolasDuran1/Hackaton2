@@ -53,8 +53,10 @@ Route::get('/posts/{id}','PostsController@show');
 Route::get('/clients', 'ClientsController@index');
 //Mostrar Productos del Cliente
 Route::get('/clients/{id}','ClientsController@show');
-
+//Vista Personas
 Route::get('/personas', 'ClientsController@personas');
+//Vista Empresas
+Route::get('/empresas', 'ClientsController@empresas');
 
 //API Tarjetas de Creditos
 //Mostrar trnsacciones de una tarjeta
