@@ -50,6 +50,21 @@ class ClientsController extends Controller
         //-> sortByDesc('id');
         return view('clients/index', ['clients' => $client]);
     }
+
+    public function personas(Request $request)
+    {
+        $personas = $this->clients->all(); //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+
+        
+        foreach($personas as $p) 
+        { 
+            if($p->type == 'N') 
+            { 
+                $clients[] = $p;
+            }
+        }
+        return view('clients/index', compact('clients'));
+    }
     
 
     public function show($id)

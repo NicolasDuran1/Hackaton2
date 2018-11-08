@@ -54,6 +54,8 @@ Route::get('/clients', 'ClientsController@index');
 //Mostrar Productos del Cliente
 Route::get('/clients/{id}','ClientsController@show');
 
+Route::get('/personas', 'ClientsController@personas');
+
 //API Tarjetas de Creditos
 //Mostrar trnsacciones de una tarjeta
 Route::get('/cards/{id}', 'CreditcardController@transacciones');
@@ -61,6 +63,7 @@ Route::get('/cards/{id}', 'CreditcardController@transacciones');
 //API Tarjetas de debitos
 //Mostrar trnsacciones de una tarjeta
 Route::get('/debits/{id}', 'DebitController@transacciones');
+
 
 
 Auth::routes();

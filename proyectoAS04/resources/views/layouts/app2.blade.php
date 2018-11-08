@@ -45,8 +45,17 @@
 
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('clients') }}"><i class="fas fa-book"></i>
-                        Clientes
+                        Clientes Todos
                 </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-left" href="{{ url('clients') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>
+                  Clientes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item nav-link" href="{{ url('/personas') }}"><i class="far fa-user"></i>    Personas</a>
+                  <a class="dropdown-item nav-link" href="{{ url('admin/roles') }}"><i class="fas fa-users"></i> Empresas</a>
+                </div>
               </li>
 
               {{-- <li class="nav-item">

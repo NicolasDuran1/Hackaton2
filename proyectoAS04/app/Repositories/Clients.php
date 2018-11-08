@@ -44,5 +44,5 @@ Class Clients
         //dd($response);
 
         return json_decode($response->getBody()->getContents()); 
-	}
+	}	
 }
