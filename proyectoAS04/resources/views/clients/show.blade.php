@@ -35,12 +35,18 @@
 				                <td>
 				                	{{ $c->type }}
 				                </td>
-				                <td>
-				                	{{ $c->limitAmount }}
-				                </td>
+				                @if($c->limitAmount == Null)
+				                	<td>
+				                		-----
+				                	</td>
+				                @else
+					                <td>
+					                	{{ $c->limitAmount }}
+					                </td>
+					            @endif
 				                @if($c->type == 'TDC')
 					                <td>
-					                	<a class="col-sm-6" target="_blank" href="">
+					                	<a class="col-sm-6" target="_blank" href="/cards/{{ $c->id }}">
 			                            	<i class="far fa-eye"></i>
 			                                Credito
 			                            </a>

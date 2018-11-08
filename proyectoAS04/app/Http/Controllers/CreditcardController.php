@@ -29,25 +29,25 @@ class CreditcardController extends Controller
 
         //dd($cards);
 
-        return view('cards/index', compact('cards'));
+        return view('cards/show', compact('cards'));
     }
 
 
-    public function transacciones($id)
-    {
+    // public function transacciones($id)
+    // {
     	
-    	$id = $id."?beginDate=01-01-2018&endDate=06-11-2018";
-    	//dd($id);
-        $cards = $this->cards->all($id); 
-        //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
+    // 	$id = $id."?beginDate=01-01-2018&endDate=06-11-2018";
+    // 	//dd($id);
+    //     $cards = $this->cards->all($id); 
+    //     //Metodo All que obtiene todos los posts. Metodo declarado en Posts.php
 
-        //dd($cards);
-        //dd($id);
+    //     //dd($cards);
+    //     //dd($id);
 
-        dd($cards);
+    //     dd($cards);
 
-        return view('cards/index', compact('cards'));
-    }
+    //     return view('cards/index', compact('cards'));
+    // }
     
 
     // public function show($id)

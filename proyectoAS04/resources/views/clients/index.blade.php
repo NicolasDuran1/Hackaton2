@@ -49,9 +49,15 @@
 			                        <td>
 			                        	{{ $client->region }}
 			                        </td>
-			                        <td>
-			                        	{{ $client->subType }}
-			                        </td>
+			                        @if($client->subType == Null)
+			                        	<td>
+			                        		----
+			                        	</td>
+			                        @else
+				                        <td>
+				                        	{{ $client->subType }}
+				                        </td>
+				                    @endif
 			                        <td>
 			                        	{{ $client->type }}
 			                        </td>
