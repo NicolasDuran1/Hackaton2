@@ -27,7 +27,7 @@ class CreditcardController extends Controller
         //dd($cards);
         //dd($id);
 
-        dd($cards);
+        //dd($cards);
 
         return view('cards/index', compact('cards'));
     }
