@@ -9,6 +9,9 @@
 
     <!-- Llamar a la vista de generadora de mensajes-->
     @include('common.sessions')
+     <div class="card-body p-0 pb-3 text-left">
+    	<h5 class="align-items-left">Cuenta Corriente</h5>
+   	</div>
     <div class="card card-small py-3 mb-4 d-flex align-items-center">
 		<form class="form-horizontal text-center" role="form">
 		    <div class="card-body p-0 pb-3 text-center">
@@ -34,7 +37,7 @@
 					  <tr>
 					  	<!-- Volver Atras -->
 					    <th>
-					    	<a class="btn btn-primary" class="col-sm-6" href="/home"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
+					    	<a class="btn btn-primary" class="col-sm-6" href="/mostrar/486258"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
 					    </th>
 
 					    <div class="alert alert-success">

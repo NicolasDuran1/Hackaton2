@@ -41,7 +41,7 @@
 
           <div class="main-navbar">
             <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0"> <!-- align-items-stretch esto es para usar todo el alto -->
-              <a class="navbar-brand w-100 mr-3" href="{{ url('/home') }}" style="line-height: 30px;">  
+              <a class="navbar-brand w-100 mr-3" href="{{ url('/mostrar/486258') }}" style="line-height: 30px;">  
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="{{ asset('images/minilogo2.png') }}">
                   <span class="d-none d-md-inline ml-1">3IT</span>

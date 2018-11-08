@@ -40,37 +40,22 @@
                         <div class="row">
                           <div class="col"> 
                             <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="feFirstName">Nombre</label>
-                                <input type="text" name="nombre" class="form-control" value="{{$clienteactual->firstName}}"> 
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="feFirstName">Apellido</label>
-                                <input type="text" name="nombre" class="form-control" value="{{$clienteactual->lastName}}"> 
-                              </div>
-                              <div class="form-group col-md-6">
-                                  <label for="feInputAddress">Rut</label>
-                                    <input type="text" class="form-control" name="rut" value="{{$clienteactual->formattedRut}}" disabled> 
-                              </div>
-                              <div class="form-row">
-                                <div class="form-group col-md-6">
-                                  <label for="feEmailAddress">Género</label>
-                                  @if($clienteactual->gender = 'M')
-                                    <input type="text" class="form-control" name="rut" value="Masculino" disabled> 
-                                  @else
-                                    <input type="text" class="form-control" name="rut" value="Femenino" disabled>  
-                                  @endif
-                                </div>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                      <label for="feInputAddress">Region</label>
-                                        <input type="text" class="form-control" name="rut" value="{{$clienteactual->region}}" disabled> 
-                                  </div>
-                                </div>
-                              </div>
+
+                  <table style="width:90%"> <!-- Utilizacion de una tabla para mostrar los iconos-->
+                            <tr>
+                              <!-- Volver Atras -->
+                              <th>                              
+                            <div class="alert alert-success ">
+                                    Total INGRESOS: $3.327.170
                             </div>
-                          </div>
-                        </div>
+                            <div class="alert alert-danger">
+                                    Total EGRESOS: $11.401.010
+                             </div>
+                            </th>
+                          </tr>
+                     </table>
+
+                          
                       </li>
                     </ul>
                   </div>

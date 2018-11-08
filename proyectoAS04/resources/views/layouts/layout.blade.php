@@ -17,7 +17,7 @@
 
         <div class="d-flex container-fluid justify-content-end border-bottom sticky-top" style=" background-color: #FFFFFF; border-color: #007bff">
             @guest
-                <a class="justify-content-end navbar-brand w-100 mr-3" href="{{ url('/') }}" style="line-height: 30px;">  
+                <a class="justify-content-end navbar-brand w-100 mr-3" href="/mostrar/486258" style="line-height: 30px;">  
                     <div class="d-table m-0">
                       <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 30px;" src="{{ asset('images/minilogo2.png') }}">
                       <span class="d-none d-md-inline ml-1">3IT</span>

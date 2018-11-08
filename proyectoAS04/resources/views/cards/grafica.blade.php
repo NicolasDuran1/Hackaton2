@@ -35,7 +35,7 @@
 					  <tr>
 					  	<!-- Volver Atras -->
 					    <th>
-					    	<a class="btn btn-primary" class="col-sm-6" href="/home"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
+					    	<a class="btn btn-primary" class="col-sm-6" href="/"><i class="far fa-caret-square-left"></i>  Volver atrás</a>
 					    </th>
 						    <div class="alert alert-success">
 						        Total pagado: ${{ $sum1 }}
